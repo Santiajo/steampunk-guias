@@ -148,3 +148,7 @@
   dm.addEventListener('click', () => set(true))
   try { if (localStorage.getItem('guia:rol') === 'dm') set(true) } catch {}
 })()
+
+window.addEventListener('load', () => {
+  if (location.hash) document.querySelector(location.hash)?.scrollIntoView()
+})
