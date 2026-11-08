@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guía del jugador · Steampunk Adventurers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Bitter:wght@600;700&family=Cinzel:wght@700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><b>Steampunk Adventurers</b><span>Guía del jugador</span></div>
+    <label class="search" for="buscar">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4" stroke-linecap="round"/></svg>
+      <input id="buscar" type="search" placeholder="Buscar: contraseña, conjuros, tienda…" aria-label="Buscar en la guía">
+    </label>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="toc" aria-label="Secciones">
+    <small>En esta guía</small>
+    <a href="#empezar">Empieza aquí</a>
+    <a href="#entrar">Entrar</a>
+    <a href="#crear">Crear tu personaje</a>
+    <a href="#ficha">Tu ficha</a>
+    <a href="#nivel">Subir de nivel y comprar</a>
+    <a href="#mesas">Mesas y recompensas</a>
+    <a href="#biblioteca">Biblioteca</a>
+    <a href="#privacidad">Qué ven los demás</a>
+    <a href="#ayuda">Si algo no funciona</a>
+  </nav>
+
+  <main>
+    <section class="intro" id="empezar">
+      <h1>Guía del jugador</h1>
+      <p>Todo lo que necesitas para entrar, crear tu personaje y usarlo en la mesa, en <a href="https://steampunk-adventurers.netlify.app">steampunk-adventurers.netlify.app</a>. Funciona igual en el celular y en el computador.</p>
+      <div class="badge-row">
+        <span class="pill steel">Celular y computador</span>
+        <span class="pill verdigris">Se guarda solo</span>
+        <span class="pill brass">Reglas 2024</span>
+      </div>
+      <div class="tasks" style="margin-top:8px">
+        <a class="task" href="#entrar"><i>Primera vez</i><b>Entrar a la web</b><span>Con tu usuario o con un código de invitación.</span></a>
+        <a class="task" href="#crear"><i>Antes de jugar</i><b>Crear tu personaje</b><span>Cinco pasos guiados, del origen a la revisión.</span></a>
+        <a class="task" href="#ficha"><i>En la mesa</i><b>Usar tu ficha</b><span>Daño, curación, descansos, armas y objetos.</span></a>
+        <a class="task" href="#nivel"><i>Entre mesas</i><b>Subir de nivel</b><span>Cuando la planilla registra tus checkpoints.</span></a>
+        <a class="task" href="#mesas"><i>Después de jugar</i><b>Tomar recompensas</b><span>El oro y los objetos que deja el DM.</span></a>
+        <a class="task" href="#biblioteca"><i>Consulta</i><b>Buscar en la biblioteca</b><span>Conjuros, objetos, criaturas y reglas enlazados.</span></a>
+      </div>
+      <div class="plate" style="margin-top:6px">
+        <div class="progress"><b style="font-family:var(--font-display);color:var(--ink)">Lista para tu primera mesa</b><span data-count></span></div>
+        <div class="bar" aria-hidden="true"><i></i></div>
+        <ul class="checks" data-checklist="jugador-primera-mesa">
+          <li><label for="c1"><input type="checkbox" id="c1"><span>Entré y elegí mi propia contraseña.</span></label></li>
+          <li><label for="c2"><input type="checkbox" id="c2"><span>Creé mi personaje y aparece en <b>Mis personajes</b>.</span></label></li>
+          <li><label for="c3"><input type="checkbox" id="c3"><span>Equipé mi armadura y mi arma en <b>Objetos</b>.</span></label></li>
+          <li><label for="c4"><input type="checkbox" id="c4"><span>Me inscribí en una mesa desde <b>Planilla</b>.</span></label></li>
+          <li><label for="c5"><input type="checkbox" id="c5"><span>Probé <b>Daño</b>, <b>Curar</b> y un <b>Descanso largo</b> en <b>En juego</b>.</span></label></li>
+        </ul>
+        <p style="font-size:0.82rem;color:var(--faint)">Las marcas se guardan solo en este navegador.</p>
+      </div>
+    </section>
+
+    <section class="plate" id="entrar" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Sección 1</span>
+        <h2>Entrar</h2>
+        <p class="lead">No hay registro abierto: el admin te da una contraseña temporal o un código de invitación. Elige tu caso.</p>
+      </div>
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Formas de entrar">
+          <button role="tab" id="t-e1" aria-controls="p-e1"><span class="n">1</span>Usuario y contraseña</button>
+          <button role="tab" id="t-e2" aria-controls="p-e2"><span class="n">2</span>Código de invitación</button>
+          <button role="tab" id="t-e3" aria-controls="p-e3"><span class="n">3</span>Tu primera contraseña</button>
+        </div>
+        <div class="panel cols" role="tabpanel" id="p-e1" aria-labelledby="t-e1">
+          <div>
+            <ol class="steps">
+              <li><span>Abre la web y toca <span class="ui">Entrar</span>.</span></li>
+              <li><span>En <b>Usuario o correo</b> escribe tu nombre de jugador tal como sale en la planilla. Mayúsculas, tildes y espacios no importan.</span></li>
+              <li><span>Escribe tu contraseña y toca <span class="ui">Entrar</span>.</span></li>
+            </ol>
+            <div class="note"><b>¿Olvidaste la contraseña?</b>Pídele al admin que la restablezca. Te dará una temporal y la web te pedirá elegir otra.</div>
+          </div>
+          <figure class="shot"><button type="button" aria-label="Ampliar: pantalla de ingreso"><img src="img/1a-entrar.png" alt="Pantalla de ingreso con usuario y contraseña"></button><figcaption>Pantalla de ingreso</figcaption></figure>
+        </div>
+        <div class="panel cols" role="tabpanel" id="p-e2" aria-labelledby="t-e2">
+          <div>
+            <p>El código tiene 12 letras y números, sirve una sola vez y vence a los 7 días.</p>
+            <ol class="steps">
+              <li><span>En la pantalla de ingreso toca <span class="ui">Tengo un código de invitación</span>.</span></li>
+              <li><span>Escribe el código. Los guiones y las minúsculas no importan.</span></li>
+              <li><span>Toca <span class="ui">Canjear código</span>. La web crea tu cuenta y entra sola.</span></li>
+            </ol>
+          </div>
+          <figure class="shot"><button type="button" aria-label="Ampliar: canje de código"><img src="img/1b-codigo-invitacion.png" alt="Canje de un código de invitación"></button><figcaption>Canjear un código</figcaption></figure>
+        </div>
+        <div class="panel cols" role="tabpanel" id="p-e3" aria-labelledby="t-e3">
+          <div>
+            <p>La primera vez, o si el admin restableció tu contraseña, aparece <b>Completa tu registro</b>. No puedes usar la web hasta terminarlo.</p>
+            <ol class="steps">
+              <li><span>Revisa tu <b>Nombre visible</b>: así te ven los demás.</span></li>
+              <li><span>Escribe tu nueva contraseña dos veces.</span></li>
+              <li><span>Toca <span class="ui">Guardar y continuar</span>.</span></li>
+            </ol>
+            <div class="note tip"><b>La contraseña necesita</b>al menos 10 caracteres, una mayúscula, una minúscula y un número. Debajo del campo ves lo que le falta mientras escribes.</div>
+          </div>
+          <figure class="shot"><button type="button" aria-label="Ampliar: completa tu registro"><img src="img/1c-completa-tu-registro.png" alt="Ventana Completa tu registro"></button><figcaption>Elegir tu contraseña</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="plate" id="crear" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Sección 2</span>
+        <h2>Crear tu personaje</h2>
+        <p class="lead">En <b>Mis personajes → Crear personaje</b> un asistente te guía en cinco pasos y solo te deja elegir lo que tu clase, especie y trasfondo permiten. El botón redondo <span class="ui">i</span> junto a una opción abre su texto sin elegirla.</p>
+      </div>
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Pasos del asistente">
+          <button role="tab" id="t-c1" aria-controls="p-c1"><span class="n">1</span>Origen</button>
+          <button role="tab" id="t-c2" aria-controls="p-c2"><span class="n">2</span>Características</button>
+          <button role="tab" id="t-c3" aria-controls="p-c3"><span class="n">3</span>Niveles</button>
+          <button role="tab" id="t-c4" aria-controls="p-c4"><span class="n">4</span>Equipo</button>
+          <button role="tab" id="t-c5" aria-controls="p-c5"><span class="n">5</span>Revisión</button>
+        </div>
+        <div class="panel cols" role="tabpanel" id="p-c1" aria-labelledby="t-c1">
+          <div>
+            <p>Nombre, nivel inicial, especie, facción, trasfondo y dos idiomas además de Common.</p>
+            <ul class="bullets">
+              <li>Si tu especie pide algo (linaje, tamaño, una habilidad o una dote, como la de Human), aparece ahí mismo.</li>
+              <li>La dote que elijas muestra debajo sus hechizos y lo que te pide decidir.</li>
+              <li>Marca <b>Mantener mi facción en secreto</b> si no quieres que otros jugadores la vean.</li>
+              <li>Si tu trasfondo no está, usa <span class="ui">Trasfondo personalizado</span>.</li>
+            </ul>
+          </div>
+          <figure class="shot"><button type="button" aria-label="Ampliar: paso Origen"><img src="img/2a-creador-origen.png" alt="Paso Origen con idiomas"></button><figcaption>Origen: idiomas y trasfondo</figcaption></figure>
+        </div>
+        <div class="panel" role="tabpanel" id="p-c2" aria-labelledby="t-c2">
+          <p>Elige <b>Array estándar</b>, <b>Compra de puntos</b> o <b>Tiradas</b> y reparte los valores. Debajo aplicas el bono de tu trasfondo (+2/+1 o +1/+1/+1) y ves los modificadores finales.</p>
+          <div class="note warn"><b>Si después cambias de trasfondo</b>el bono se reinicia. Revisión te avisa que debes repartirlo de nuevo.</div>
+        </div>
+        <div class="panel cols" role="tabpanel" id="p-c3" aria-labelledby="t-c3">
+          <div>
+            <p>Un nivel a la vez. Las pestañas de arriba marcan con ✓ los niveles listos. En cada uno completas <b>Qué debes decidir</b>: habilidades, trucos, conjuros, estilo de combate, maestrías, subclase, mejora o dote.</p>
+            <ul class="bullets">
+              <li>Una dote que no cumples sale gris con el motivo.</li>
+              <li>Los hechizos que te da tu clase o especie aparecen en <b>Hechizos que ganas</b>: no se eligen ni cuentan en tus preparados.</li>
+              <li><b>Cambiar conjuros de antes:</b> en el nivel en que estás ves todos los conjuros y trucos que elegiste y puedes cambiarlos ahí, sin volver atrás.</li>
+              <li>Si cambias la clase de un nivel, los niveles siguientes que tenían esa clase pasan a la nueva y debes elegir de nuevo.</li>
+            </ul>
+          </div>
+          <figure class="shot"><button type="button" aria-label="Ampliar: paso Niveles"><img src="img/2b-creador-niveles.png" alt="Paso Niveles con maestrías elegidas"></button><figcaption>Niveles: pestañas y decisiones</figcaption></figure>
+        </div>
+        <div class="panel cols" role="tabpanel" id="p-c4" aria-labelledby="t-c4">
+          <div>
+            <p>Eliges el paquete de tu clase y el de tu trasfondo (o su oro), tus objetos mágicos gratis según tu nivel, y gastas el oro en la tienda.</p>
+            <ul class="bullets">
+              <li><b>Objetos que ya tiene tu personaje:</b> solo se agregan aquí, al crearlo, y solo lo que está en la lista (incluidas las versiones +1, +2 y +3).</li>
+              <li>Después, los objetos los entrega el DM; tú compras en la tienda.</li>
+            </ul>
+          </div>
+          <figure class="shot"><button type="button" aria-label="Ampliar: paso Equipo"><img src="img/2c-creador-equipo.png" alt="Paso Equipo con tienda y objetos iniciales"></button><figcaption>Equipo: tienda y objetos iniciales</figcaption></figure>
+        </div>
+        <div class="panel cols" role="tabpanel" id="p-c5" aria-labelledby="t-c5">
+          <div>
+            <p>Resumen de nivel, puntos de golpe, oro y características. Si falta algo, Revisión lo lista por paso; si no, toca <span class="ui">Crear personaje</span>.</p>
+            <div class="note tip"><b>¿No terminaste?</b>Toca <span class="ui">Guardar borrador</span>. Lo retomas después, incluso desde otro dispositivo, en <b>Mis personajes → Borradores</b>. Los borradores no salen en la planilla.</div>
+          </div>
+          <figure class="shot"><button type="button" aria-label="Ampliar: paso Revisión"><img src="img/2d-creador-revision.png" alt="Paso Revisión antes de crear"></button><figcaption>Revisión antes de crear</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="plate" id="ficha" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Sección 3</span>
+        <h2>Tu ficha</h2>
+        <p class="lead">Toca un personaje en <b>Mis personajes</b>. Toca cualquier habilidad, rasgo, dote, conjuro u objeto para leer qué hace: es tu consulta rápida en la mesa. En el celular, la barra de abajo cambia entre <b>Juego, Stats, Combate, Magia, Rasgos y Objetos</b>.</p>
+      </div>
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Secciones de la ficha">
+          <button role="tab" id="t-f1" aria-controls="p-f1">En juego</button>
+          <button role="tab" id="t-f2" aria-controls="p-f2">Combate</button>
+          <button role="tab" id="t-f3" aria-controls="p-f3">Objetos y oro</button>
+          <button role="tab" id="t-f4" aria-controls="p-f4">Cambios y permisos</button>
+        </div>
+        <div class="panel cols" role="tabpanel" id="p-f1" aria-labelledby="t-f1">
+          <div>
+            <p>Tu tracker en la mesa. Se guarda solo.</p>
+            <ul class="bullets">
+              <li>Escribe una cantidad y toca <span class="ui">Daño</span>, <span class="ui">Curar</span> o <span class="ui">Temporal</span>. El daño gasta primero los temporales.</li>
+              <li>Con <span class="ui">−</span> y <span class="ui">+</span> gastas y recuperas espacios de conjuro y de pacto, dados de superioridad, dados de golpe y los recursos de tu clase.</li>
+            </ul>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Botón</th><th>Qué devuelve</th></tr></thead>
+              <tbody>
+                <tr><td><b>Descanso corto</b></td><td>Espacios de pacto, dados de superioridad y lo que vuelve con descanso corto, como Action Surge. No devuelve puntos ni dados de golpe.</td></tr>
+                <tr><td><b>Descanso largo</b></td><td>Todo: puntos de golpe, dados de golpe, espacios y recursos.</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+          <figure class="shot"><button type="button" aria-label="Ampliar: En juego"><img src="img/3a-ficha-en-juego.png" alt="Ficha, sección En juego"></button><figcaption>En juego</figcaption></figure>
+        </div>
+        <div class="panel cols" role="tabpanel" id="p-f2" aria-labelledby="t-f2">
+          <div>
+            <p>Tu CA desglosada y cada arma equipada con su ataque, daño y dados extra ya sumados. Cada arma muestra sus maestrías; las que tienes activas salen con ★.</p>
+            <p>Los objetos que suben salvaciones, CD o una característica se aplican solos. Un arma mágica como Vicious Weapon te pide su <b>Arma base</b>.</p>
+          </div>
+          <figure class="shot"><button type="button" aria-label="Ampliar: Combate"><img src="img/3b-ficha-combate.png" alt="Ficha, sección Combate"></button><figcaption>Combate</figcaption></figure>
+        </div>
+        <div class="panel cols" role="tabpanel" id="p-f3" aria-labelledby="t-f3">
+          <div>
+            <ul class="bullets">
+              <li>Marca <b>Equipado</b> y, si hace falta, <b>Sintonizado</b> (máximo 3): el objeto empieza a contar.</li>
+              <li>Lo que quitas queda en el historial como objeto que ya no tienes.</li>
+              <li><b>Oro:</b> cada movimiento queda en el historial. Escribe un monto negativo para gastar.</li>
+            </ul>
+          </div>
+          <figure class="shot"><button type="button" aria-label="Ampliar: Objetos"><img src="img/3c-ficha-objetos.png" alt="Ficha, sección Objetos"></button><figcaption>Objetos</figcaption></figure>
+        </div>
+        <div class="panel" role="tabpanel" id="p-f4" aria-labelledby="t-f4">
+          <ul class="bullets">
+            <li><b>Cambios de descanso</b> (en Rasgos) te deja cambiar sin permiso del DM lo que las reglas permiten tras un descanso: conjuros preparados, maestrías y opciones como Hunter's Prey. Abre la decisión, cambia y toca <span class="ui">Guardar cambio</span>.</li>
+            <li><b>Editar:</b> mientras tu personaje no haya jugado una mesa, puedes cambiar lo que quieras. Después, cambiar características, especie, trasfondo o rehacer un nivel requiere permiso del DM.</li>
+            <li><b>Juega en la campaña:</b> cada jugador puede tener como máximo 2 personajes jugando mesas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="plate" id="nivel" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Sección 4</span>
+        <h2>Subir de nivel y comprar</h2>
+      </div>
+      <div class="cols" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+        <div>
+          <h3>Subir de nivel</h3>
+          <ol class="steps">
+            <li><span>Cuando la planilla registra tus checkpoints, la ficha muestra <b>Puedes subir de nivel</b>.</span></li>
+            <li><span>Toca <span class="ui">Subir a nivel N</span>.</span></li>
+            <li><span>Elige la clase de ese nivel y sus decisiones, y confirma.</span></li>
+          </ol>
+        </div>
+        <div>
+          <h3>Comprar</h3>
+          <ol class="steps">
+            <li><span>En <b>Objetos</b>, toca <span class="ui">Ir a la tienda</span>.</span></li>
+            <li><span>Busca por nombre o categoría y toca <span class="ui">Comprar</span>.</span></li>
+            <li><span>El oro baja en el historial y el objeto llega al inventario. No deja gastar más de lo que tienes.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="plate" id="mesas" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Sección 5</span>
+        <h2>Mesas y recompensas</h2>
+        <p class="lead">En <b>Planilla</b> ves las mesas, la asistencia y los Treasure Points de la campaña.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Inscribirte en una mesa</h3>
+          <ol class="steps">
+            <li><span>Abre la mesa en <b>Tablón de Misiones</b> o <b>Calendario y Mesas</b>.</span></li>
+            <li><span>Si pide <b>PIN de acceso</b>, escribe los dígitos que te dio el DM y toca <span class="ui">Desbloquear mesa</span>.</span></li>
+            <li><span>Elige tu personaje y toca <span class="ui">Inscribirme a esta mesa</span>. Para salir, <span class="ui">Retirarme de la mesa</span>.</span></li>
+          </ol>
+          <h3>Tomar una recompensa</h3>
+          <ol class="steps">
+            <li><span>Abre la mesa en la que jugaste.</span></li>
+            <li><span>En <b>Recompensas de la mesa</b>, toca <span class="ui">Tomar para</span> tu personaje.</span></li>
+            <li><span>El oro llega al historial y el objeto al inventario, con su base y su bono.</span></li>
+          </ol>
+          <div class="note"><b>Quién puede tomar</b>Solo los personajes inscritos en esa mesa. El oro lo toma cada uno; cada objeto, solo el primero que lo toma.</div>
+          <p>La <b>Matriz de Asistencia</b> marca con ✓ en qué mesas jugó cada personaje. En el celular desliza la tabla de lado para ver más mesas.</p>
+        </div>
+        <figure class="shot"><button type="button" aria-label="Ampliar: planilla"><img src="img/5-planilla.png" alt="Planilla con las mesas"></button><figcaption>Planilla y mesas</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="plate" id="biblioteca" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Sección 6</span>
+        <h2>Biblioteca</h2>
+        <p class="lead">Clases, especies, trasfondos, dotes, conjuros, objetos, bestiario, facciones, reglas y condiciones. Escribe en <b>Search</b> o abre <b>More filters</b> para filtrar por escuela, rareza, desafío, libro y más.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <ul class="bullets">
+            <li><b>Enlaces:</b> los nombres del texto llevan a su entrada, como en una wiki: conjuros en cursiva, condiciones en negrita, criaturas de un stat block. Atrás vuelve a la anterior.</li>
+            <li><b>Compartir:</b> cada entrada tiene su propia dirección; copia el enlace del navegador.</li>
+            <li><b>Conjuros que convocan</b> (como Summon Fey) muestran la criatura debajo. Elige el nivel del espacio y la CA, los puntos de golpe, los ataques y el daño se calculan solos.</li>
+            <li><b>Warlock:</b> las invocaciones están en Eldritch Invocation Options y se filtran por tu nivel.</li>
+          </ul>
+        </div>
+        <figure class="shot"><button type="button" aria-label="Ampliar: biblioteca"><img src="img/6-biblioteca-enlaces.png" alt="Find Familiar con enlaces a criaturas"></button><figcaption>Enlaces en Find Familiar</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="plate" id="privacidad" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Sección 7</span>
+        <h2>Qué ven los demás</h2>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Dato</th><th>Quién lo ve</th></tr></thead>
+        <tbody>
+          <tr><td>Tu hoja de seguimiento (motivaciones, metas, ganchos)</td><td><span class="pill verdigris">Tú</span> el DM y el admin</td></tr>
+          <tr><td>Tu facción secreta</td><td><span class="pill verdigris">Tú</span> el DM y el admin</td></tr>
+          <tr><td>Facción pública, clase, nivel y Treasure Points</td><td><span class="pill steel">Jugadores</span> cualquiera con cuenta</td></tr>
+          <tr><td>La biblioteca</td><td><span class="pill steel">Jugadores</span> cualquiera con sesión iniciada</td></tr>
+        </tbody>
+      </table></div>
+      <p>Puedes cambiar tu nombre visible; tu nombre de usuario lo fija el admin.</p>
+    </section>
+
+    <section class="plate" id="ayuda" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Sección 8</span>
+        <h2>Si algo no funciona</h2>
+        <p class="lead">Toca el mensaje que ves para saber qué hacer.</p>
+      </div>
+      <div>
+        <details class="qa"><summary>Usuario o contraseña incorrectos.</summary><div><p>Escribe tu nombre tal como está en la planilla. Si sigue, pide al admin que restablezca tu contraseña.</p></div></details>
+        <details class="qa"><summary>Código inválido, ya usado o vencido.</summary><div><p>El código ya se canjeó o pasaron 7 días. Pide uno nuevo al admin.</p></div></details>
+        <details class="qa"><summary>A la contraseña le falta: …</summary><div><p>Agrega lo que indica el mensaje: largo, mayúscula, minúscula o número.</p></div></details>
+        <details class="qa"><summary>La nueva contraseña debe ser distinta de la temporal.</summary><div><p>Elige una contraseña diferente a la que te dio el admin.</p></div></details>
+        <details class="qa"><summary>Tu cuenta no está vinculada a un jugador.</summary><div><p>Pide al admin que la vincule a tu nombre en la planilla.</p></div></details>
+        <details class="qa"><summary>Demasiados intentos.</summary><div><p>Espera un minuto y vuelve a intentar.</p></div></details>
+        <details class="qa"><summary>No puedo tocar Crear personaje</summary><div><p>Mira <b>Falta decidir</b> en Revisión y vuelve al paso que indica.</p></div></details>
+        <details class="qa"><summary>Quiero cambiar algo y no me deja</summary><div><p>Si tu personaje ya jugó una mesa, pídele permiso al DM. Lo que se cambia en un descanso está en <b>Cambios de descanso</b>.</p></div></details>
+        <details class="qa"><summary>PIN incorrecto al inscribirme</summary><div><p>Consulta los dígitos con el DM de esa mesa.</p></div></details>
+      </div>
+      <p>Para cualquier otra cosa, escríbele al DM o al admin con una captura de pantalla.</p>
+    </section>
+
+    <p class="empty">No encontré eso en la guía. Prueba con otra palabra, como “oro”, “conjuro” o “contraseña”.</p>
+    <footer class="foot">Steampunk Adventurers · Guía del jugador · noviembre de 2026</footer>
+  </main>
+</div>
+
+<dialog class="zoom" aria-label="Captura ampliada"><img src="" alt=""><form method="dialog"><button>Cerrar</button></form></dialog>
+<script src="app.js"></script>
+
+</body>
+</html>

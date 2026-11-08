@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guía del DM y admin · Steampunk Adventurers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Bitter:wght@600;700&family=Cinzel:wght@700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><b>Steampunk Adventurers</b><span>Guía del DM y admin</span></div>
+    <div class="roles" role="group" aria-label="Mostrar funciones de">
+      <button type="button" id="r-all" aria-pressed="true">DM y admin</button>
+      <button type="button" id="r-dm" aria-pressed="false">Solo DM</button>
+    </div>
+    <label class="search" for="buscar">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4" stroke-linecap="round"/></svg>
+      <input id="buscar" type="search" placeholder="Buscar: TP, invitación, tienda…" aria-label="Buscar en la guía">
+    </label>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="toc" aria-label="Secciones">
+    <small>En esta guía</small>
+    <a href="#empezar">Empieza aquí</a>
+    <a href="#mesas">Mesas y asistencia</a>
+    <a href="#recompensas">Recompensas de mesa</a>
+    <a href="#personajes">Personajes de jugadores</a>
+    <a href="#sheets">Google Sheets</a>
+    <a href="#taller">Taller y biblioteca</a>
+    <a href="#cuentas" data-role="admin">Cuentas y roles</a>
+    <a href="#reglas" data-role="admin">Reglas de campaña</a>
+    <a href="#elecciones" data-role="admin">Elecciones e importar</a>
+    <a href="#privacidad">Privacidad</a>
+  </nav>
+
+  <main>
+    <section class="intro" id="empezar">
+      <h1>Guía del DM y admin</h1>
+      <p>Lo que hacen el DM y el admin en <a href="https://steampunk-adventurers.netlify.app">steampunk-adventurers.netlify.app</a>: mesas, asistencia, recompensas, personajes, cuentas y reglas de la campaña. Esta guía no es para jugadores; ellos tienen la suya.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Rol</th><th>Qué puede hacer</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pill steel">Jugador</span></td><td>Lee la biblioteca, crea y sube de nivel sus personajes, maneja su inventario y oro, y se inscribe en mesas.</td></tr>
+          <tr><td><span class="pill copper">DM</span></td><td>Además crea mesas, pasa asistencia, da Treasure Points y downtime, deja recompensas, entrega objetos y edita la biblioteca de la campaña.</td></tr>
+          <tr><td><span class="pill aether">Admin</span></td><td>Todo lo anterior, más cuentas, roles, reglas de campaña, elecciones e importación. Nadie puede cambiar su propio rol.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tasks">
+        <a class="task" href="#mesas"><i>Cada semana</i><b>Crear una mesa</b><span>Fecha, misión, PIN y enlace para WhatsApp.</span></a>
+        <a class="task" href="#mesas"><i>Al terminar</i><b>Pasar asistencia</b><span>Con el +1 TP semanal en un toque.</span></a>
+        <a class="task" href="#recompensas"><i>Al terminar</i><b>Dejar recompensas</b><span>Oro u objetos que los jugadores toman.</span></a>
+        <a class="task" href="#personajes"><i>A pedido</i><b>Dar un permiso</b><span>Para que un jugador cambie su ficha.</span></a>
+        <a class="task" href="#cuentas" data-role="admin"><i>Jugador nuevo</i><b>Darle acceso</b><span>Cuenta con contraseña temporal o invitación.</span></a>
+        <a class="task" href="#reglas" data-role="admin"><i>Campaña</i><b>Ajustar reglas</b><span>Riqueza inicial, tiendas y precios en TP.</span></a>
+      </div>
+    </section>
+
+    <section class="plate" id="mesas" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Planilla</span>
+        <h2>Mesas y asistencia</h2>
+        <div class="who"><span class="pill copper">DM</span><span class="pill aether">Admin</span></div>
+      </div>
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Ciclo de una mesa">
+          <button role="tab" id="t-m1" aria-controls="p-m1"><span class="n">1</span>Crear</button>
+          <button role="tab" id="t-m2" aria-controls="p-m2"><span class="n">2</span>Publicar</button>
+          <button role="tab" id="t-m3" aria-controls="p-m3"><span class="n">3</span>Asistencia y TP</button>
+          <button role="tab" id="t-m4" aria-controls="p-m4"><span class="n">4</span>Downtime</button>
+        </div>
+        <div class="panel" role="tabpanel" id="p-m1" aria-labelledby="t-m1">
+          <ol class="steps">
+            <li><span>En <b>Planilla</b> toca <span class="ui">+ Nueva mesa</span>, elige la <b>Fecha</b> y, si quieres, un <b>Nombre</b>.</span></li>
+            <li><span>Abre la mesa. En <b>Detalle de la Mesa</b> completa el <b>Título</b>, el <b>DM a cargo</b> y el <b>Texto de la Misión / Notas del DM</b>.</span></li>
+            <li><span>Si quieres que solo entren quienes invitas, ponle un <b>PIN</b>: los jugadores lo escriben para desbloquear la inscripción.</span></li>
+          </ol>
+        </div>
+        <div class="panel" role="tabpanel" id="p-m2" aria-labelledby="t-m2">
+          <p>En la mesa, <b>Compartir mesa y Código QR</b> te da <span class="ui">Copiar para WhatsApp</span>, <span class="ui">Copiar enlace</span> y <span class="ui">Mostrar QR</span>. Los jugadores la ven en <b>Tablón de Misiones</b> y se inscriben con su personaje.</p>
+          <p>También puedes inscribirlos tú con <b>Añadir aventurero a la mesa</b>, o quitar a alguien con el botón de su fila.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="p-m3" aria-labelledby="t-m3">
+          <ul class="bullets">
+            <li><b>En la mesa:</b> marca <b>Asistió</b> en cada aventurero. El botón de TP semanal da 1 TP a cada asistente.</li>
+            <li><b>Rápido:</b> <span class="ui">Pasar asistencia</span> elige la mesa, marca a los presentes y, con la casilla <b>Otorgar automáticamente +1 TP semanal</b>, da el TP en el mismo paso.</li>
+            <li><b>En la Matriz de Asistencia:</b> toca una celda para marcar o desmarcar. El botón de cada semana da 1 TP a todos los que jugaron esa semana, una sola vez.</li>
+          </ul>
+          <div class="note tip"><b>Una vez por semana</b>El TP semanal no se duplica aunque toques el botón otra vez.</div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-m4" aria-labelledby="t-m4">
+          <p>Desde la mesa, registra los <b>Días de downtime</b> para los participantes marcados como presentes. Si nadie está marcado, la ventana te lo avisa.</p>
+          <div class="note warn"><b>Eliminar una mesa</b>borra la mesa definitivamente y pide confirmación. Úsalo solo para mesas creadas por error.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="plate" id="recompensas" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Planilla</span>
+        <h2>Recompensas de mesa</h2>
+        <div class="who"><span class="pill copper">DM</span><span class="pill aether">Admin</span></div>
+        <p class="lead">Dejas el botín en la mesa y cada jugador lo toma para su personaje. Llega solo a la ficha.</p>
+      </div>
+      <div class="flow" aria-label="Cómo llega una recompensa">
+        <div><b>Tú dejas</b><span>En <b>Recompensas de la mesa</b>: Oro (cantidad por personaje) u Objeto (cualquiera de la biblioteca, también +1, +2 y +3), con una nota.</span></div>
+        <span aria-hidden="true">→</span>
+        <div><b>El jugador toma</b><span>Abre la mesa y toca <b>Tomar para</b> su personaje. Debe estar inscrito.</span></div>
+        <span aria-hidden="true">→</span>
+        <div><b>Llega a la ficha</b><span>El oro al historial; el objeto al inventario con su base y su bono.</span></div>
+      </div>
+      <ul class="bullets">
+        <li>El oro lo toma cada personaje; cada objeto, solo el primero.</li>
+        <li>Una recompensa que nadie tomó se puede <span class="ui">Quitar</span>.</li>
+        <li>Los jugadores sin cuenta no pueden tomarla: entrégala tú desde su ficha (ver Personajes).</li>
+      </ul>
+    </section>
+
+    <section class="plate" id="personajes" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Planilla y fichas</span>
+        <h2>Personajes de los jugadores</h2>
+        <div class="who"><span class="pill copper">DM</span><span class="pill aether">Admin</span></div>
+      </div>
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Herramientas de personajes">
+          <button role="tab" id="t-p1" aria-controls="p-p1">En la planilla</button>
+          <button role="tab" id="t-p2" aria-controls="p-p2">En la ficha</button>
+          <button role="tab" id="t-p3" aria-controls="p-p3">Crear y completar</button>
+        </div>
+        <div class="panel" role="tabpanel" id="p-p1" aria-labelledby="t-p1">
+          <p><span class="ui">Anotar personaje</span> agrega uno a la planilla. <span class="ui">Editar</span> en su fila abre sus datos:</p>
+          <ul class="bullets">
+            <li>Nombre, clase, subclase, especie, facción, renombre, nivel inicial y <b>Estado</b> (Activo, Muerto o Retirado).</li>
+            <li><b>Ocultar facción a otros jugadores</b> la deja solo para su dueño, el DM y el admin.</li>
+            <li><b>Registrar TP, downtime u oro</b>: elige el tipo, la cantidad y el motivo. Queda en el historial; nada se borra.</li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-p2" aria-labelledby="t-p2">
+          <p>En la ficha de cualquier personaje ves <b>Herramientas del DM</b> (la pestaña <b>DM</b> en el celular):</p>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Herramienta</th><th>Para qué</th></tr></thead>
+            <tbody>
+              <tr><td><b>Permisos de edición</b></td><td>Deja que el jugador cambie características, especie y trasfondo, rehaga un nivel o haga un cambio de clase narrativo. Lo usa una vez; puedes revocarlo antes.</td></tr>
+              <tr><td><b>Ajustes de características</b></td><td>Aumentos permanentes, como un Manual of Bodily Health o una bendición. Cuentan como valor base para multiclase y requisitos.</td></tr>
+              <tr><td><b>Entregar objeto</b></td><td>Busca en la biblioteca (también versiones +1, +2 y +3) y agrégalo como botín o recompensa.</td></tr>
+              <tr><td><b>Movimiento de oro</b></td><td>Suma o resta oro con un motivo. Un movimiento se puede anular, no borrar.</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-p3" aria-labelledby="t-p3">
+          <ul class="bullets">
+            <li><b>Crear para otro jugador:</b> en el asistente aparece <b>Jugador (DM)</b>; elige para quién es. El DM puede crear hasta nivel 20.</li>
+            <li><b>Ficha sin completar:</b> los personajes de la planilla anteriores al asistente. Su dueño toca <span class="ui">Completar ficha</span>, elige las decisiones de sus niveles y, una sola vez, registra su equipo y compra con el oro que ya tiene.</li>
+            <li>La asistencia rápida solo lista personajes que juegan la campaña; los borradores no aparecen.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="plate" id="sheets" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Planilla</span>
+        <h2>Sincronizar con Google Sheets</h2>
+        <div class="who"><span class="pill copper">DM</span><span class="pill aether">Admin</span></div>
+        <p class="lead"><span class="ui">Sincronizar Google Sheets</span> trae los datos de la hoja oficial sin borrar nada de la web.</p>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>En la hoja</th><th>En la web</th></tr></thead>
+        <tbody>
+          <tr><td>Jugador o personaje nuevo</td><td>Se agrega.</td></tr>
+          <tr><td>Personaje que ya existe</td><td>Se actualizan clase, especie, nivel inicial, renombre y facción, y conserva su cuenta. El oro no: vive en la web.</td></tr>
+          <tr><td>Asistencias nuevas</td><td>Se suman; las mesas ya creadas se reutilizan por fecha.</td></tr>
+          <tr><td>Algo que se quitó</td><td>Sigue en la web. Bórralo a mano si corresponde.</td></tr>
+          <tr><td>Facción oculta en la web</td><td>No se publica aunque la hoja la tenga.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note"><b>Si Google no responde</b>la sincronización se detiene con un aviso y no cambia nada.</div>
+    </section>
+
+    <section class="plate" id="taller" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Admin → Taller de campaña</span>
+        <h2>Taller de clases y biblioteca</h2>
+        <div class="who"><span class="pill copper">DM</span><span class="pill aether">Admin</span></div>
+        <p class="lead">Cada sección de Admin tiene arriba una ayuda con sus pasos.</p>
+      </div>
+      <div class="cols" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+        <div>
+          <h3>Taller de clases</h3>
+          <ul class="bullets">
+            <li>Elige una clase o subclase para ver su tabla y sus rasgos por nivel.</li>
+            <li><span class="ui">Editar</span> cambia el texto de un rasgo; <span class="ui">Agregar rasgo</span> crea uno en el nivel que digas.</li>
+            <li>Para una clase o subclase nueva usa los botones <b>Nueva</b>.</li>
+            <li>Si un rasgo hace elegir algo al jugador, configúralo en Elecciones (admin).</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Biblioteca (todo el contenido)</h3>
+          <ul class="bullets">
+            <li>Agrega o corrige dotes, especies, trasfondos, objetos, conjuros, monstruos, reglas, idiomas, condiciones y facciones.</li>
+            <li>Al elegir el tipo aparece qué es y qué completar, y el botón <b>+ Nueva</b>.</li>
+            <li>Los textos llevan botones de formato: <span class="ui">N</span> <span class="ui">C</span> <span class="ui">Título</span> <span class="ui">• Lista</span> <span class="ui">1. Lista</span> <span class="ui">Tabla</span> <span class="ui">Cita</span> <span class="ui">Enlace</span>. <b>Vista previa</b> muestra cómo lo verán los jugadores.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="plate" id="cuentas" data-search data-role="admin">
+      <div class="plate-head">
+        <span class="eyebrow">Solo admin</span>
+        <h2>Cuentas y roles</h2>
+        <div class="who"><span class="pill aether">Admin</span></div>
+        <p class="lead">No hay registro abierto. Desde <b>Planilla → Planilla de Personajes</b>, junto a cada jugador ves <b>Sin cuenta</b> o <b>Cuenta</b>. El DM no ve estos botones.</p>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Opción</th><th>Qué recibe el jugador</th><th>Cuándo usarla</th></tr></thead>
+        <tbody>
+          <tr><td><b>Crear cuenta</b></td><td>Usuario y contraseña temporal</td><td>Lo ayudas en persona o por chat</td></tr>
+          <tr><td><b>Generar invitación</b></td><td>Código de un solo uso, vence en 7 días</td><td>Que active la cuenta solo</td></tr>
+        </tbody>
+      </table></div>
+      <div class="cols" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+        <div>
+          <h3>Dar acceso</h3>
+          <ol class="steps">
+            <li><span>Toca <span class="ui">Sin cuenta</span> junto al jugador.</span></li>
+            <li><span>Elige <b>Crear cuenta</b> o <b>Generar invitación</b>.</span></li>
+            <li><span>Toca <span class="ui">Copiar mensaje para WhatsApp</span> y envíaselo. La contraseña o el código se muestran una sola vez.</span></li>
+          </ol>
+        </div>
+        <div>
+          <h3>Restablecer una contraseña</h3>
+          <ol class="steps">
+            <li><span>Toca <span class="ui">Cuenta</span> junto al jugador.</span></li>
+            <li><span>Toca <span class="ui">Restablecer contraseña</span> y envíale la temporal. La anterior deja de servir.</span></li>
+          </ol>
+        </div>
+      </div>
+      <ul class="bullets">
+        <li>Generar una invitación nueva anula la anterior que siga pendiente.</li>
+        <li>Si dos jugadores tienen nombres que solo difieren en tildes o espacios, la web no puede crear la segunda cuenta: renombra a uno en la planilla.</li>
+        <li><b>Admin → Usuarios y roles</b> cambia el rol de cada cuenta entre Jugador, DM y Admin. No puedes cambiar tu propio rol.</li>
+      </ul>
+    </section>
+
+    <section class="plate" id="reglas" data-search data-role="admin">
+      <div class="plate-head">
+        <span class="eyebrow">Solo admin · Admin → Reglas de campaña</span>
+        <h2>Reglas de campaña</h2>
+        <div class="who"><span class="pill aether">Admin</span></div>
+        <p class="lead">Se aplican a los personajes que se creen desde ese momento.</p>
+      </div>
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Reglas">
+          <button role="tab" id="t-r1" aria-controls="p-r1">Riqueza inicial</button>
+          <button role="tab" id="t-r2" aria-controls="p-r2">Tiendas</button>
+          <button role="tab" id="t-r3" aria-controls="p-r3">Treasure Points</button>
+        </div>
+        <div class="panel" role="tabpanel" id="p-r1" aria-labelledby="t-r1">
+          <p>Por cada nivel inicial (3 a 20): el oro y cuántos objetos mágicos de cada rareza recibe el personaje, además de los paquetes de su clase y su trasfondo. Cambia un valor y toca <span class="ui">Guardar</span> en esa fila.</p>
+          <p class="note">Ejemplo: nivel 5 parte con 525 gp, 1 objeto Common y 1 Uncommon.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="p-r2" aria-labelledby="t-r2">
+          <ul class="bullets">
+            <li>Crea una tienda, agrégale objetos de la biblioteca y fija su precio.</li>
+            <li>Lo que escribas en <b>Reglas de la tienda</b> lo ven los jugadores.</li>
+            <li>Puedes ocultar un objeto sin borrarlo.</li>
+            <li><b>Es un servicio</b> (como Servicios de conjuro) la saca de la tienda del creador.</li>
+            <li>Los objetos mágicos gratis al crear un personaje salen de estas tiendas: un objeto que no está en ninguna no se puede elegir.</li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-r3" aria-labelledby="t-r3">
+          <p>El precio en TP de cada rareza y desde qué tier se puede comprar. Una rareza desactivada (hoy, Common) no se compra con TP.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="plate" id="elecciones" data-search data-role="admin">
+      <div class="plate-head">
+        <span class="eyebrow">Solo admin</span>
+        <h2>Elecciones e importar</h2>
+        <div class="who"><span class="pill aether">Admin</span></div>
+      </div>
+      <div class="cols" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+        <div>
+          <h3>Admin → Elecciones</h3>
+          <p>Una elección es una pregunta que el creador hace al jugador: un linaje, una lista de hechizos, una opción de un rasgo.</p>
+          <ul class="bullets">
+            <li>Filtra por clase, especie o dote y toca <span class="ui">Editar</span> en el rasgo.</li>
+            <li>Lo más seguro: copia una elección parecida y cambia los nombres.</li>
+            <li><b>Contrastado</b> marca que ya la revisaste contra el libro; <b>Volver a la regla común</b> deshace tus cambios.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Admin → Importar</h3>
+          <ol class="steps">
+            <li><span>Descarga la plantilla del tipo que quieres cargar.</span></li>
+            <li><span>Llénala en Excel o Google Sheets y súbela como CSV.</span></li>
+            <li><span>Revisa la vista previa: dice qué se crea y qué se actualiza. Luego confirma.</span></li>
+          </ol>
+          <p class="note">Para pocas entradas es más simple agregarlas a mano en Biblioteca.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="plate" id="privacidad" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Para todos</span>
+        <h2>Privacidad</h2>
+        <p class="lead">La protección está en la base de datos, no solo en la pantalla.</p>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Dato</th><th>Quién lo ve</th><th>Quién lo edita</th></tr></thead>
+        <tbody>
+          <tr><td>Hoja de seguimiento (motivaciones, metas, ganchos)</td><td>Dueño, DM, admin</td><td>Dueño, DM, admin</td></tr>
+          <tr><td>Facción oculta</td><td>Dueño, DM, admin</td><td>DM, admin</td></tr>
+          <tr><td>Facción pública, clase, nivel, TP</td><td>Cualquier jugador con cuenta</td><td>DM, admin</td></tr>
+          <tr><td>Biblioteca</td><td>Cualquiera con sesión iniciada</td><td>DM (versión de campaña), admin</td></tr>
+        </tbody>
+      </table></div>
+      <p>Cada jugador solo cambia su nombre visible; su usuario lo fija el admin.</p>
+    </section>
+
+    <p class="empty">No encontré eso en la guía. Prueba con otra palabra, como “TP”, “mesa” o “invitación”.</p>
+    <footer class="foot">Steampunk Adventurers · Guía del DM y admin · noviembre de 2026</footer>
+  </main>
+</div>
+
+<dialog class="zoom" aria-label="Captura ampliada"><img src="" alt=""><form method="dialog"><button>Cerrar</button></form></dialog>
+<script src="app.js"></script>
+
+</body>
+</html>
