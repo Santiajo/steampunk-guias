@@ -150,5 +150,5 @@
 })()
 
 window.addEventListener('load', () => {
-  if (location.hash) document.querySelector(location.hash)?.scrollIntoView()
+  if (location.hash) document.querySelector(location.hash)?.scrollIntoView({ behavior: 'instant' })
 })
