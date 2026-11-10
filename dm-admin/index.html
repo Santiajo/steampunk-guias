@@ -30,6 +30,7 @@
     <a href="#empezar">Empieza aquí</a>
     <a href="#mesas">Mesas y asistencia</a>
     <a href="#recompensas">Recompensas de mesa</a>
+    <a href="#encuentro">Encuentro</a>
     <a href="#personajes">Personajes de jugadores</a>
     <a href="#sheets">Google Sheets</a>
     <a href="#taller">Taller y biblioteca</a>
@@ -54,6 +55,7 @@
       <div class="tasks">
         <a class="task" href="#mesas"><i>Cada semana</i><b>Crear una mesa</b><span>Fecha, misión, PIN y enlace para WhatsApp.</span></a>
         <a class="task" href="#mesas"><i>Al terminar</i><b>Pasar asistencia</b><span>Con el +1 TP semanal en un toque.</span></a>
+        <a class="task" href="#encuentro"><i>Durante la mesa</i><b>Llevar el combate</b><span>Iniciativa, turnos y vida de los enemigos.</span></a>
         <a class="task" href="#recompensas"><i>Al terminar</i><b>Dejar recompensas</b><span>Oro u objetos que los jugadores toman.</span></a>
         <a class="task" href="#personajes"><i>A pedido</i><b>Dar un permiso</b><span>Para que un jugador cambie su ficha.</span></a>
         <a class="task" href="#cuentas" data-role="admin"><i>Jugador nuevo</i><b>Darle acceso</b><span>Cuenta con contraseña temporal o invitación.</span></a>
@@ -118,6 +120,28 @@
         <li>El oro lo toma cada personaje; cada objeto, solo el primero.</li>
         <li>Una recompensa que nadie tomó se puede <span class="ui">Quitar</span>.</li>
         <li>Los jugadores sin cuenta no pueden tomarla: entrégala tú desde su ficha (ver Personajes).</li>
+      </ul>
+    </section>
+
+    <section class="plate" id="encuentro" data-search>
+      <div class="plate-head">
+        <span class="eyebrow">Planilla</span>
+        <h2>Encuentro (solo DM)</h2>
+        <div class="who"><span class="pill copper">DM</span><span class="pill aether">Admin</span></div>
+        <p class="lead">Lleva el combate desde la mesa: iniciativa, turnos, vida de los enemigos y sus fichas del bestiario. Los jugadores no lo ven y queda guardado.</p>
+      </div>
+      <div class="flow" aria-label="Cómo se arma un encuentro">
+        <div><b>Agregas</b><span><span class="ui">+ Agregar al encuentro</span>: monstruos del bestiario (con su CA y PG, y la cantidad), aventureros inscritos u otro combatiente.</span></div>
+        <span aria-hidden="true">→</span>
+        <div><b>Ordenas</b><span>La lista se ordena por iniciativa. <span class="ui">Tirar su iniciativa</span> tira un d20 + DES por grupo; puedes cambiar cualquier número.</span></div>
+        <span aria-hidden="true">→</span>
+        <div><b>Juegas</b><span><span class="ui">Empezar</span> marca <b>Su turno</b>; <span class="ui">Siguiente turno</span> avanza, salta a los derrotados y suma la ronda.</span></div>
+      </div>
+      <ul class="bullets">
+        <li>En cada enemigo escribe una cantidad y toca <span class="ui">Daño</span> o <span class="ui">Curar</span>; en 0 aparece <b>Derrotado</b>.</li>
+        <li><span class="ui">Ver ficha</span> abre su bloque de estadísticas (características, ataques y rasgos) en la misma fila.</li>
+        <li>Las copias se numeran solas (Goblin 1, Goblin 2…). <b>Notas</b> sirve para condiciones o recordatorios.</li>
+        <li><span class="ui">Reiniciar rondas</span> vuelve a la ronda 1; <span class="ui">Vaciar encuentro</span> borra todo. Los dos piden confirmar.</li>
       </ul>
     </section>
 
